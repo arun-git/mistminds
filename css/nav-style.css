@@ -1,0 +1,181 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+nav {
+    width: 100%;
+}
+
+nav .logo {
+    float: left;
+    font-size: 27px;
+    font-weight: bold;
+    color: white;
+    line-height: 70px;
+    padding-left: 0px;
+}
+
+nav::after {
+    content: '';
+    clear: both;
+    display: table;
+}
+
+nav ul {
+    float: right;
+    list-style: none;
+    margin-right: 0px;
+    position: relative;
+}
+
+nav ul li {
+    float: left;
+    background:white;
+    margin: 0 5px;
+    display: inline-block;
+}
+
+.home_page .header nav ul li {
+    background:transparent;
+}
+
+.home_page .header nav ul ul li {
+    background:white;
+}
+
+.home_page .header nav ul li a {
+    color: white;
+}
+
+.home_page .header nav ul ul li a {
+    color: black;
+}
+
+.home_page .header nav ul li a.active {
+    color: #5b76ed;
+}
+
+.home_page .header nav ul li a:hover {
+    color: #5b76ed;
+}
+
+nav ul li a {
+    color: black;
+    text-decoration: none;
+    line-height: 70px;
+    font-size: 17px;
+    padding: 8px 15px;
+}
+
+nav ul li a.active,a:hover {
+    color: #5b76ed;
+}
+
+nav ul ul li a:hover {
+    color: #5b76ed;
+    box-shadow: none;
+}
+
+nav ul ul {
+    position: absolute;
+    top: 90px;
+    border-top: 3px solid #5b76ed;
+    opacity: 0;
+    visibility: hidden;
+    transition: .3s;
+}
+
+nav ul li:hover > ul {
+    top: 70px;
+    opacity: 1;
+    visibility: visible;
+}
+
+nav ul ul li {
+    position: relative;
+    margin: 0;
+    float: none;
+    display: list-item;
+    border-bottom: 1px solid #5b76ed;
+}
+
+nav ul ul li a {
+    line-height: 50px;
+}
+
+nav ul ul ul li {
+    position: relative;
+    top: -70px;
+    left: 150px;
+}
+
+.show, .icon, input {
+    display: none;
+}
+
+
+
+@media all and (max-width: 968px) {
+
+    nav ul {
+        margin-right: 0;
+        float: left;
+    }
+
+    nav .logo{
+        padding-left: 20px;
+    }
+
+    nav ul li, nav ul ul li {
+        display: block;
+        width: 100%;
+    }
+
+    nav ul ul {
+        top: 70px;
+        position: static;
+        border-top: none;
+        float: none;
+        display: none;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .show {
+        display: block;
+        color: white;
+        font-size: 18px;
+        padding: 0 20px;
+        line-height: 70px;
+        cursor: pointer;
+    }
+
+    .show:hover {
+        color: #5b76ed;
+    }
+
+    .icon {
+        display: block;
+        color: black;
+        position: absolute;
+        right: 20px;
+        line-height: 70px !important;
+        font-size: 25px;
+        cursor: pointer;
+    }
+
+    nav ul li a:hover{
+        box-shadow: none;
+    }
+
+    .show + a, ul {
+        display: none;
+    }
+
+    [id^=bnt]:checked + ul {
+        display: block;
+    }
+}
